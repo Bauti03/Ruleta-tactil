@@ -1,0 +1,32 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin-top: 50px;
+}
+canvas {
+  margin: 20px auto;
+  display: block;
+}
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #218838;
+}
+#result {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #333;
+}
