@@ -1,7 +1,7 @@
 
 const canvas = document.getElementById("wheelCanvas");
 const ctx = canvas.getContext("2d");
-const names = ["Bauti", "Negra"];
+const names = ["1", "2"];
 const numSegments = names.length;
 const angleStep = (2 * Math.PI) / numSegments;
 let currentAngle = 0;
@@ -42,7 +42,7 @@ function spinWheel() {
       currentAngle += totalAngle;
       currentAngle %= 2 * Math.PI;
       const winnerIndex = Math.floor(numSegments - (currentAngle / angleStep)) % numSegments;
-      document.getElementById("result").textContent = "¡" + names[winnerIndex] + " se queda con los perros!";
+      document.getElementById("result").textContent = "¡" + names[winnerIndex] + "GANO!";
       spinning = false;
       return;
     }
