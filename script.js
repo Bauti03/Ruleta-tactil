@@ -78,9 +78,9 @@ function dibujarRuleta() {
     // Indicador: Triángulo abajo, apuntando hacia arriba
     ctx.save();
     ctx.beginPath();
-    ctx.moveTo(radio, canvas.height - 10);           // Punta del triángulo (abajo, centro)
-    ctx.lineTo(radio - 24, canvas.height - 40);      // Esquina izquierda arriba
-    ctx.lineTo(radio + 24, canvas.height - 40);      // Esquina derecha arriba
+    ctx.moveTo(radio, canvas.height - 40);           // Punta del triángulo (abajo, centro)
+    ctx.lineTo(radio - 24, canvas.height - 20);      // Esquina izquierda arriba
+    ctx.lineTo(radio + 24, canvas.height - 20);      // Esquina derecha arriba
     ctx.closePath();
     ctx.fillStyle = "#ffe14d";
     ctx.shadowColor = "#fff";
