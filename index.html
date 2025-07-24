@@ -4,16 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Ruleta</title>
+  <title>Ruleta Divertida</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1 id="title">Ruleta</h1>
-    <canvas id="wheelCanvas" width="500" height="500"></canvas>
-    <button id="spin">Girar</button>
+    <div class="wheel-wrapper">
+      <canvas id="wheelCanvas" width="500" height="500"></canvas>
+      <div class="pointer"></div>
+    </div>
+    <button id="spin">🎯 Girar</button>
     <p id="result"></p>
   </div>
+  <canvas id="confetti"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
