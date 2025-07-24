@@ -2,22 +2,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ruleta Divertida</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1 id="title">Ruleta</h1>
-    <div class="wheel-wrapper">
-      <canvas id="wheelCanvas" width="500" height="500"></canvas>
-      <div class="pointer"></div>
+    <h1 id="titulo-ruleta">Ruleta Divertida</h1>
+    <canvas id="ruleta"></canvas>
+    <div class="controls">
+      <button id="girar">🎯 Girar</button>
     </div>
-    <button id="spin">🎯 Girar</button>
-    <p id="result"></p>
+    <div id="resultado"></div>
   </div>
-  <canvas id="confetti"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
