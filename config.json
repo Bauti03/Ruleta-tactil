@@ -1,0 +1,15 @@
+{
+  "title": "Ruleta",
+  "options": [
+    {
+      "text": "Jugador 1",
+      "color": "#FF6384",
+      "image": "assets/player1.png"
+    },
+    {
+      "text": "Jugador 2",
+      "color": "#36A2EB",
+      "image": "assets/player2.png"
+    }
+  ]
+}

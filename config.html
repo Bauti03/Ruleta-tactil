@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Configurar Ruleta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="config-container" id="login">
+  <h2>Acceso</h2>
+  <input type="password" id="password" placeholder="Clave">
+  <button onclick="login()">Entrar</button>
+</div>
+<div class="config-container" id="panel" style="display:none;">
+  <h2>Configuración</h2>
+  <label>Título: <input id="configTitle"></label><br><br>
+  <label>Opciones (texto e imagen):</label>
+  <div id="options"></div>
+  <button onclick="addOption()">Agregar Opción</button><br><br>
+  <button onclick="saveConfig()">Guardar</button>
+</div>
+<script>
+const correctPassword = "1234";
+let config = {};
+async function fetchConfig(){
+  const res = await fetch('config.json?_=' + Date.now());
+  config = await res.json();
+}
+async function init(){
+  await fetchConfig();
+  document.getElementById('configTitle').value = config.title;
+  const optionsDiv = document.getElementById('options');
+  optionsDiv.innerHTML = "";
+  config.options.forEach((opt,i)=>{
+    optionsDiv.innerHTML += `<div>
+      <input value="${opt.text}" id="text${i}">
+      <input type="color" value="${opt.color}" id="color${i}">
+      <input type="text" value="${opt.image}" id="image${i}">
+    </div>`;
+  });
+}
+function login(){
+  if(document.getElementById('password').value===correctPassword){
+    document.getElementById('login').style.display='none';
+    document.getElementById('panel').style.display='block';
+    init();
+  } else { alert("Clave incorrecta"); }
+}
+function addOption(){
+  config.options.push({text:"Nueva Opción",color:"#ffffff",image:""});
+  init();
+}
+function saveConfig(){
+  config.title = document.getElementById('configTitle').value;
+  config.options = config.options.map((opt,i)=>({
+    text:document.getElementById('text'+i).value,
+    color:document.getElementById('color'+i).value,
+    image:document.getElementById('image'+i).value
+  }));
+  const blob = new Blob([JSON.stringify(config,null,2)], {type : 'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = "config.json";
+  a.click();
+  alert("Descargado config.json - reemplazalo en tu hosting.");
+}
+</script>
+</body>
+</html>
