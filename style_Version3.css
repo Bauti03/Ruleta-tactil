@@ -1,0 +1,86 @@
+body {
+    background: radial-gradient(circle at center, #4e22a7 0%, #27144b 100%);
+    font-family: 'Luckiest Guy', cursive, 'Segoe UI', 'Arial', sans-serif;
+    color: #fff;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.titulo {
+    color: #ffe14d;
+    text-shadow: 2px 2px #2e085b, 0 0 12px #ffe14d;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+    animation: bounce 1.1s infinite alternate;
+    text-align: center;
+    width: 100%;
+    margin-top: 24px;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+#ruleta {
+    margin: 10px 0 20px 0;
+    border: 8px solid #ffe14d;
+    border-radius: 50%;
+    box-shadow: 0 0 40px 10px #ffe14d66;
+    background: #392368;
+    display: block;
+}
+
+#girarBtn {
+    background: linear-gradient(90deg, #ffe14d 0%, #f47aff 100%);
+    color: #27144b;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #ffe14d77;
+    transition: background 0.3s, transform 0.15s;
+    margin-bottom: 25px;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 2px;
+}
+
+#girarBtn:hover, #girarBtn:active {
+    background: linear-gradient(90deg, #f47aff 40%, #ffe14d 100%);
+    transform: scale(1.06);
+}
+
+.premio {
+    font-size: 2.4em;
+    color: #fff;
+    background: #7e3ff2;
+    border: 4px solid #ffe14d;
+    border-radius: 22px;
+    padding: 18px 40px;
+    margin-top: 20px;
+    box-shadow: 0 0 40px 8px #f47aff99;
+    display: none;
+    animation: pop 0.7s;
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 3px;
+    text-align: center;
+    min-width: 180px;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    70% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
